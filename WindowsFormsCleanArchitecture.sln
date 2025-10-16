@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsCleanArchitecture", "WindowsFormsCleanArchitecture\WindowsFormsCleanArchitecture.csproj", "{D8B8107F-1BC4-4C1A-B4D0-5BB158868616}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WindowsFormsCleanArchitecture", "WindowsFormsCleanArchitecture\WindowsFormsCleanArchitecture.csproj", "{D8B8107F-1BC4-4C1A-B4D0-5BB158868616}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "Entities\Entities.csproj", "{B72CADFF-0156-4B7A-81D9-C381BB435607}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{D8B8107F-1BC4-4C1A-B4D0-5BB158868616}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D8B8107F-1BC4-4C1A-B4D0-5BB158868616}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D8B8107F-1BC4-4C1A-B4D0-5BB158868616}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B72CADFF-0156-4B7A-81D9-C381BB435607}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B72CADFF-0156-4B7A-81D9-C381BB435607}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B72CADFF-0156-4B7A-81D9-C381BB435607}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B72CADFF-0156-4B7A-81D9-C381BB435607}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
