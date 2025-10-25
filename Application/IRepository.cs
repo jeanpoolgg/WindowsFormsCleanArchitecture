@@ -1,4 +1,4 @@
-﻿
+﻿    
 namespace Application
 {
     public interface IRepository<T>
@@ -6,6 +6,6 @@ namespace Application
         Task<T> GetByIdAsync(int id);
 
         Task<IEnumerable<T>> GetAllAsync();
-        Task AddAsync(T beer);
+        Task AddAsync(T item);
     }
 }
