@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WindowsFormsCleanArchitectu
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entities", "Entities\Entities.csproj", "{B72CADFF-0156-4B7A-81D9-C381BB435607}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "Application\Application.csproj", "{ACEFA1C0-0036-4367-9482-1E3DE7E7A330}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApplicationBusiness", "Application\ApplicationBusiness.csproj", "{ACEFA1C0-0036-4367-9482-1E3DE7E7A330}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Model", "Model\Model.csproj", "{034285C3-1F86-4B54-8AAB-B5DC65966585}"
 EndProject

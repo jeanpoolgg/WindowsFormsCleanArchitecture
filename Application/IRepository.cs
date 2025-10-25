@@ -1,5 +1,5 @@
-﻿    
-namespace Application
+﻿
+namespace ApplicationBusiness
 {
     public interface IRepository<T>
     {
