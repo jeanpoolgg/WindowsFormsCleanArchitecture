@@ -1,7 +1,10 @@
+using ApplicationBusiness;
 using Data;
+using Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Repository;
 
 namespace WindowsFormsCleanArchitecture
 {
@@ -36,8 +39,11 @@ namespace WindowsFormsCleanArchitecture
                 .Build();
 
             services.AddDbContext<AppDbContext>(options =>
-              options.UseSqlServer(configuration.GetConnectionString("DB")));
-            )
+              options.UseSqlServer(configuration.GetConnectionString("DB"))
+            );
+
+            services.AddTransient<AddBrand>();
+            services.AddTransient<IRepository<Brand>, BrandRepository>();
 
             services.AddTransient<FormMain>();
             services.AddTransient<FormBrand>();

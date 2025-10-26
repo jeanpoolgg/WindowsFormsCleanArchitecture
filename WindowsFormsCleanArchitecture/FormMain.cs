@@ -1,15 +1,21 @@
+using Microsoft.Extensions.DependencyInjection;
+
 namespace WindowsFormsCleanArchitecture
 {
     public partial class FormMain : Form
     {
-        public FormMain()
+        private readonly IServiceProvider _serviceProvide;
+
+        public FormMain(IServiceProvider serviceProvide)
         {
             InitializeComponent();
+            _serviceProvide = serviceProvide;
         }
 
         private void marcasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var frm = new FormBrand();
+            // var frm = new FormBrand();
+            var frm = _serviceProvide.GetRequiredService<FormBrand>();
             frm.ShowDialog();
             MessageBox.Show("Se ha cerrado");
         }
