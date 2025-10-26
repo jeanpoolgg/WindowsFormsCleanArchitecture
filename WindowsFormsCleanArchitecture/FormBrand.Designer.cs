@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            dgv = new DataGridView();
             btnBrand = new Button();
+            dgv = new DataGridView();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgv).BeginInit();
             SuspendLayout();
@@ -44,16 +44,6 @@
             panel1.Size = new Size(800, 96);
             panel1.TabIndex = 0;
             // 
-            // dgv
-            // 
-            dgv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgv.Dock = DockStyle.Fill;
-            dgv.Location = new Point(0, 96);
-            dgv.Name = "dgv";
-            dgv.Size = new Size(800, 354);
-            dgv.TabIndex = 1;
-            dgv.CellContentClick += dataGridView1_CellContentClick;
-            // 
             // btnBrand
             // 
             btnBrand.Location = new Point(83, 30);
@@ -63,6 +53,23 @@
             btnBrand.Text = "Nueva Marca";
             btnBrand.UseVisualStyleBackColor = true;
             btnBrand.Click += btnBrand_Click;
+            // 
+            // dgv
+            // 
+            dgv.AllowUserToAddRows = false;
+            dgv.AllowUserToDeleteRows = false;
+            dgv.AllowUserToResizeRows = false;
+            dgv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgv.Dock = DockStyle.Fill;
+            dgv.Location = new Point(0, 96);
+            dgv.MultiSelect = false;
+            dgv.Name = "dgv";
+            dgv.ReadOnly = true;
+            dgv.RowHeadersVisible = false;
+            dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgv.Size = new Size(800, 354);
+            dgv.TabIndex = 1;
+            dgv.CellContentClick += dataGridView1_CellContentClick;
             // 
             // FormBrand
             // 
