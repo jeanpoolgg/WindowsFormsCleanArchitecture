@@ -30,11 +30,14 @@
         {
             panel1 = new Panel();
             dgv = new DataGridView();
+            btnBrand = new Button();
+            panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgv).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
+            panel1.Controls.Add(btnBrand);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
@@ -50,6 +53,16 @@
             dgv.Size = new Size(800, 354);
             dgv.TabIndex = 1;
             dgv.CellContentClick += dataGridView1_CellContentClick;
+            // 
+            // btnBrand
+            // 
+            btnBrand.Location = new Point(83, 30);
+            btnBrand.Name = "btnBrand";
+            btnBrand.Size = new Size(110, 37);
+            btnBrand.TabIndex = 0;
+            btnBrand.Text = "Nueva Marca";
+            btnBrand.UseVisualStyleBackColor = true;
+            btnBrand.Click += btnBrand_Click;
             // 
             // FormBrand
             // 
@@ -67,6 +80,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Marcas";
             Load += FormBrand_Load;
+            panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgv).EndInit();
             ResumeLayout(false);
         }
@@ -75,5 +89,6 @@
 
         private Panel panel1;
         private DataGridView dgv;
+        private Button btnBrand;
     }
 }

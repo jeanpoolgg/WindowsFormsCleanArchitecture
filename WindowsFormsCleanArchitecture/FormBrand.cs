@@ -1,5 +1,6 @@
 ﻿using ApplicationBusiness;
 using Entities;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,10 +16,12 @@ namespace WindowsFormsCleanArchitecture
     public partial class FormBrand : Form
     {
         private IRepository<Brand> _repositoryBrand;
-        public FormBrand(IRepository<Brand> repositoryBrand)
+        private readonly IServiceProvider _serviceProvider;
+        public FormBrand(IRepository<Brand> repositoryBrand, IServiceProvider serviceProvider)
         {
             InitializeComponent();
             _repositoryBrand = repositoryBrand;
+            _serviceProvider = serviceProvider;
         }
 
         private async Task Refresh()
@@ -35,6 +38,13 @@ namespace WindowsFormsCleanArchitecture
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private async void btnBrand_Click(object sender, EventArgs e)
+        {
+            var frm = _serviceProvider.GetRequiredService<FormNewEditBrand>();
+            frm.ShowDialog();
+            await Refresh();
         }
     }
 }

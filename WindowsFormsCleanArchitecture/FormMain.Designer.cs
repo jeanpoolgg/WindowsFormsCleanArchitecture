@@ -53,7 +53,7 @@
             // marcasToolStripMenuItem
             // 
             marcasToolStripMenuItem.Name = "marcasToolStripMenuItem";
-            marcasToolStripMenuItem.Size = new Size(180, 22);
+            marcasToolStripMenuItem.Size = new Size(112, 22);
             marcasToolStripMenuItem.Text = "Marcas";
             marcasToolStripMenuItem.Click += marcasToolStripMenuItem_Click;
             // 
@@ -67,6 +67,7 @@
             Name = "FormMain";
             Text = "Mi sistema";
             WindowState = FormWindowState.Maximized;
+            Load += FormMain_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);

@@ -19,5 +19,10 @@ namespace WindowsFormsCleanArchitecture
             frm.ShowDialog();
             MessageBox.Show("Se ha cerrado");
         }
+
+        private void FormMain_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
