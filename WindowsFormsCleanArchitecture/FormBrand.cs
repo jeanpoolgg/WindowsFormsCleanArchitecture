@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ApplicationBusiness;
+using Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,14 +14,22 @@ namespace WindowsFormsCleanArchitecture
 {
     public partial class FormBrand : Form
     {
-        public FormBrand()
+        private IRepository<Brand> _repositoryBrand;
+        public FormBrand(IRepository<Brand> repositoryBrand)
         {
             InitializeComponent();
+            _repositoryBrand = repositoryBrand;
         }
 
-        private void FormBrand_Load(object sender, EventArgs e)
+        private async Task Refresh()
         {
+            var brands = await _repositoryBrand.GetAllAsync();
+            dgv.DataSource = brands.ToList();
+        }
 
+        private async void FormBrand_Load(object sender, EventArgs e)
+        {
+            await Refresh();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
