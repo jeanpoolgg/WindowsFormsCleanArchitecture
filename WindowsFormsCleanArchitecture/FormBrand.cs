@@ -42,10 +42,12 @@ namespace WindowsFormsCleanArchitecture
 
             int id = Convert.ToInt32(dgv.Rows[e.RowIndex].Cells["Id"].Value);
 
+
             if (dgv.Columns[e.ColumnIndex].Name == "EditButton")
             {
                 var frm = _serviceProvider.GetRequiredService<FormNewEditBrand>();
                 var brand = await _repositoryBrand.GetByIdAsync(id);
+                MessageBox.Show("Editar marca ID: " + id);
                 frm.setInfo(brand);
                 frm.ShowDialog();
                 await Refresh();

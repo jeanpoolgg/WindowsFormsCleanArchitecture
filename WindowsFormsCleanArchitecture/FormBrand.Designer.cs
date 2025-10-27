@@ -69,7 +69,7 @@
             dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgv.Size = new Size(800, 354);
             dgv.TabIndex = 1;
-            dgv.CellContentClick += dataGridView1_CellContentClick;
+            dgv.CellContentClick += dgv_CellContentClick;
             // 
             // FormBrand
             // 

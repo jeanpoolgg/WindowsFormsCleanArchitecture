@@ -16,11 +16,13 @@ namespace WindowsFormsCleanArchitecture
     {
         private int _id = 0;
         private readonly AddBrand _addBrand;
+        private readonly EditBrand _editBrand;
 
-        public FormNewEditBrand(AddBrand addBrand)
+        public FormNewEditBrand(AddBrand addBrand, EditBrand editBrand)
         {
             InitializeComponent();
             _addBrand = addBrand;
+            _editBrand = editBrand;
         }
 
 
@@ -46,7 +48,7 @@ namespace WindowsFormsCleanArchitecture
                 }
                 else
                 {
-
+                    await Edit();
                 }
             }
             catch (Exception ex)
@@ -66,5 +68,19 @@ namespace WindowsFormsCleanArchitecture
 
             this.Close();
         }
+
+        private async Task Edit()
+        {
+            string name = txtName.Text.Trim();
+
+            await _editBrand.ExecuteAsync(new Brand
+            {
+                Id = _id,
+                Name = name
+            });
+ 
+
+            this.Close();
+        }   
     }
 }

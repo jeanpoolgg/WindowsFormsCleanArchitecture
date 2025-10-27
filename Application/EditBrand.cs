@@ -16,22 +16,16 @@ namespace ApplicationBusiness
             _repositoryBrand = repositoryBrand;
         }
 
-        public async Task Execute(Brand brand)
+        public async Task ExecuteAsync(Brand brand)
         {
-            // Validaciones
-            if (brand == null)
+            if(string.IsNullOrEmpty(brand.Name))
             {
-                throw new ArgumentNullException(nameof(brand), "La marca no puede ser nula.");
+                throw new Exception("El nombre de la marca es obligatorio");
             }
 
-            if (brand.Id <= 0)
+            if(await _repositoryBrand.GetByIdAsync(brand.Id) == null)
             {
-                throw new ArgumentException("El ID de la marca debe ser mayor que cero.", nameof(brand.Id));
-            }
-
-            if (string.IsNullOrWhiteSpace(brand.Name))
-            {
-                throw new ArgumentException("El nombre de la marca no puede estar vacío.", nameof(brand.Name));
+                throw new Exception("La marca no existe");
             }
 
             // Lógica para editar la marca
