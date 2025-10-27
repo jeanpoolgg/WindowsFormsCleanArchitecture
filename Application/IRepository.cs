@@ -7,5 +7,9 @@ namespace ApplicationBusiness
 
         Task<IEnumerable<T>> GetAllAsync();
         Task AddAsync(T item);
+
+        public Task EditAsync(T item);
+
+        public Task DeleteAsync(int id);
     }
 }
