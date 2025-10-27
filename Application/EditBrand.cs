@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,14 +9,14 @@ namespace ApplicationBusiness
 {
     public class EditBrand
     {
-        private readonly IRepository<Entities.Brand> _repositoryBrand;
+        private readonly IRepository<Brand> _repositoryBrand;
 
-        public EditBrand(IRepository<Entities.Brand> repositoryBrand)
+        public EditBrand(IRepository<Brand> repositoryBrand)
         {
             _repositoryBrand = repositoryBrand;
         }
 
-        public async Task Execute(Entities.Brand brand)
+        public async Task Execute(Brand brand)
         {
             // Validaciones
             if (brand == null)
