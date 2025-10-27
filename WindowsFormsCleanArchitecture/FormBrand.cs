@@ -60,6 +60,8 @@ namespace WindowsFormsCleanArchitecture
 
                 if (confirmResult == DialogResult.Yes)
                 {
+                    await _repositoryBrand.DeleteAsync(id);
+                    await Refresh();
                 }
             }
         }
