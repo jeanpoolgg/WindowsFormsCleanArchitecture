@@ -11,7 +11,7 @@ namespace Data
 
         public DbSet<BrandModel> Brands { get; set; }
 
-        public DbSet<BrandModel> Beers { get; set; }
+        public DbSet<BeerModel> Beers { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
