@@ -11,9 +11,13 @@ namespace Data
 
         public DbSet<BrandModel> Brands { get; set; }
 
+        public DbSet<BrandModel> Beers { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);
+           // base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<BrandModel>().ToTable("Brand");
+            modelBuilder.Entity<BeerModel>().ToTable("Beer");
         }
     }
 }

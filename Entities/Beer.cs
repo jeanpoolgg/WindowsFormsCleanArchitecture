@@ -7,6 +7,6 @@ namespace Entities
         public string Name { get; set; }
         public int BrandId { get; set; }
         public decimal Alcohol { get; set; }
-        public bool isStrongBeer() => Alcohol > 7.5m;
+        public bool IsStrongBeer() => Alcohol > 7.5m;
     }
 }
