@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ApplicationBusiness;
+using Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,14 +14,27 @@ namespace WindowsFormsCleanArchitecture
 {
     public partial class FormNewEditBeer : Form
     {
-        public FormNewEditBeer()
+        private readonly IRepository<Brand> _brandRepository;
+        public FormNewEditBeer(IRepository<Brand> repository)
         {
             InitializeComponent();
+            _brandRepository = repository;
         }
 
         private void FormNewEditBeer_Load(object sender, EventArgs e)
         {
+            ChargeData();
+        }
 
+        private async Task ChargeData()
+        {
+            cboBrand.DataSource = await _brandRepository.GetAllAsync();
+            cboBrand.DisplayMember = "Name";
+            cboBrand.ValueMember = "Id";
+            if (cboBrand.Items.Count > 0)
+            {
+                cboBrand.SelectedIndex = 0;
+            }
         }
     }
 }
