@@ -46,6 +46,11 @@ namespace WindowsFormsCleanArchitecture
             services.AddTransient<EditBrand>();
             services.AddTransient<IRepository<Brand>, BrandRepository>();
 
+            services.AddTransient<AddBeer>();
+            services.AddTransient<EditBeer>();
+            services.AddTransient<IRepository<Beer>, BeerRepository>();
+
+
             services.AddTransient<FormMain>();
             services.AddTransient<FormBrand>();
             services.AddTransient<FormNewEditBrand>();
