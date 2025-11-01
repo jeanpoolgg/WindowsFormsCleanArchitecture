@@ -69,6 +69,7 @@
             btnBrand.TabIndex = 0;
             btnBrand.Text = "Nueva Cerveza";
             btnBrand.UseVisualStyleBackColor = true;
+            btnBrand.Click += btnBrand_Click;
             // 
             // FormBeer
             // 

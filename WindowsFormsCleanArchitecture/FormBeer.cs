@@ -1,5 +1,6 @@
 ﻿using ApplicationBusiness;
 using Entities;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -66,17 +67,27 @@ namespace WindowsFormsCleanArchitecture
             if (dgv.Columns[e.ColumnIndex].Name == "EditButton")
             {
 
-            }else if (dgv.Columns[e.ColumnIndex].Name == "DeleteButton")
+            }
+            else if (dgv.Columns[e.ColumnIndex].Name == "DeleteButton")
             {
                 var confirmResult = MessageBox.Show("¿Estás seguro de que deseas eliminar esta cerveza?",
                                                           "Confirmar eliminación", MessageBoxButtons.YesNo);
 
-                if(confirmResult == DialogResult.Yes)
+                if (confirmResult == DialogResult.Yes)
                 {
                     await _repository.DeleteAsync(id);
                     await Refresh();
                 }
             }
+        }
+
+
+
+        private async void btnBrand_Click(object sender, EventArgs e)
+        {
+            var frm = _serviceProvider.GetRequiredService<FormNewEditBeer>();
+            frm.ShowDialog();
+            await Refresh();
         }
     }
 }

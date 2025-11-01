@@ -55,6 +55,7 @@ namespace WindowsFormsCleanArchitecture
             services.AddTransient<FormBrand>();
             services.AddTransient<FormNewEditBrand>();
             services.AddTransient<FormBeer>();
+            services.AddTransient<FormNewEditBeer>();
         }
     }
 }
