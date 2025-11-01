@@ -36,5 +36,18 @@ namespace WindowsFormsCleanArchitecture
                 cboBrand.SelectedIndex = 0;
             }
         }
+
+        private void txtAlcohol_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+            var textBox = sender as TextBox;
+            if(e.KeyChar == '.' && textBox.Text.Contains('.'))
+            {
+                e.Handled = true;
+            }   
+        }
     }
 }

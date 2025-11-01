@@ -66,25 +66,29 @@
             // 
             // cboBrand
             // 
+            cboBrand.DropDownStyle = ComboBoxStyle.DropDownList;
             cboBrand.FormattingEnabled = true;
             cboBrand.Location = new Point(172, 83);
             cboBrand.Name = "cboBrand";
             cboBrand.Size = new Size(121, 23);
-            cboBrand.TabIndex = 3;
+            cboBrand.TabIndex = 2;
             // 
             // txtName
             // 
             txtName.Location = new Point(172, 33);
+            txtName.MaxLength = 50;
             txtName.Name = "txtName";
             txtName.Size = new Size(121, 23);
-            txtName.TabIndex = 4;
+            txtName.TabIndex = 1;
             // 
             // txtAlcohol
             // 
             txtAlcohol.Location = new Point(172, 136);
+            txtAlcohol.MaxLength = 18;
             txtAlcohol.Name = "txtAlcohol";
             txtAlcohol.Size = new Size(121, 23);
-            txtAlcohol.TabIndex = 5;
+            txtAlcohol.TabIndex = 3;
+            txtAlcohol.KeyPress += txtAlcohol_KeyPress;
             // 
             // button1
             // 
