@@ -50,6 +50,7 @@
             dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgv.Size = new Size(800, 354);
             dgv.TabIndex = 3;
+            dgv.CellContentClick += dgv_CellContentClick;
             // 
             // panel1
             // 

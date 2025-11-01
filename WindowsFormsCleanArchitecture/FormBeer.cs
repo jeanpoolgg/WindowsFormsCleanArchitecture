@@ -56,5 +56,27 @@ namespace WindowsFormsCleanArchitecture
             dgv.Columns.Add(deleteButtonColumn);
         }
 
+        private async void dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0)
+                return;
+
+            int id = Convert.ToInt32(dgv.Rows[e.RowIndex].Cells["Id"].Value);
+
+            if (dgv.Columns[e.ColumnIndex].Name == "EditButton")
+            {
+
+            }else if (dgv.Columns[e.ColumnIndex].Name == "DeleteButton")
+            {
+                var confirmResult = MessageBox.Show("¿Estás seguro de que deseas eliminar esta cerveza?",
+                                                          "Confirmar eliminación", MessageBoxButtons.YesNo);
+
+                if(confirmResult == DialogResult.Yes)
+                {
+                    await _repository.DeleteAsync(id);
+                    await Refresh();
+                }
+            }
+        }
     }
 }
