@@ -31,6 +31,7 @@
             menuStrip1 = new MenuStrip();
             configuraciónToolStripMenuItem = new ToolStripMenuItem();
             marcasToolStripMenuItem = new ToolStripMenuItem();
+            cervezasToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -45,7 +46,7 @@
             // 
             // configuraciónToolStripMenuItem
             // 
-            configuraciónToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { marcasToolStripMenuItem });
+            configuraciónToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { marcasToolStripMenuItem, cervezasToolStripMenuItem });
             configuraciónToolStripMenuItem.Name = "configuraciónToolStripMenuItem";
             configuraciónToolStripMenuItem.Size = new Size(95, 20);
             configuraciónToolStripMenuItem.Text = "Configuración";
@@ -53,9 +54,16 @@
             // marcasToolStripMenuItem
             // 
             marcasToolStripMenuItem.Name = "marcasToolStripMenuItem";
-            marcasToolStripMenuItem.Size = new Size(112, 22);
+            marcasToolStripMenuItem.Size = new Size(180, 22);
             marcasToolStripMenuItem.Text = "Marcas";
             marcasToolStripMenuItem.Click += marcasToolStripMenuItem_Click;
+            // 
+            // cervezasToolStripMenuItem
+            // 
+            cervezasToolStripMenuItem.Name = "cervezasToolStripMenuItem";
+            cervezasToolStripMenuItem.Size = new Size(180, 22);
+            cervezasToolStripMenuItem.Text = "Cervezas";
+            cervezasToolStripMenuItem.Click += cervezasToolStripMenuItem_Click;
             // 
             // FormMain
             // 
@@ -79,5 +87,6 @@
         private MenuStrip menuStrip1;
         private ToolStripMenuItem configuraciónToolStripMenuItem;
         private ToolStripMenuItem marcasToolStripMenuItem;
+        private ToolStripMenuItem cervezasToolStripMenuItem;
     }
 }

@@ -24,5 +24,11 @@ namespace WindowsFormsCleanArchitecture
         {
 
         }
+
+        private void cervezasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = _serviceProvide.GetRequiredService<FormBeer>();
+            frm.ShowDialog();
+        }
     }
 }
